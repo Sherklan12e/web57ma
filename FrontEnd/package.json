@@ -1,0 +1,16 @@
+{
+  "name": "tailwind-practices",
+  "version": "1.0.0",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailDev": "npx tailwindcss -i ./MainProyect/Css/login.css -o ./MainProyect/Css/estilos.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  },
+  "description": ""
+}

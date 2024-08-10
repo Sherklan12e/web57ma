@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../Css/estilos.css">
+    <link rel="stylesheet" href="../Css/mode.css">
+    <title>Document</title>
+</head>
+<body class="truncate dark:bg-negro">
+    <div class="w-[100%] flex justify-end" id="contenedorToggle">
+    </div>
+    <section class="w-[100%] h-screen flex justify-center items-center">
+        <article class="text-center w-auto mb-24">
+            <h1 class="text-green font-medium text-4xl">Login</h1>
+            <h3 class="text-3xl text-gris mt-2">Ingresa tus datos para acceder a tu cuenta</h3>
+            <form >
+                <label for="Email"></label>
+                <input class="mt-6 w-[80%] outline-none border-b-2 dark:bg-negro dark:text-white" type="email" name="Email" placeholder="Email" required>
+                <br>
+                <label for="Contraseña"></label>
+                <input class="w-52 outline-none border-b-2 mr-8 dark:bg-negro dark:text-white" type="password" name="Contraseña" placeholder="Contraseña">
+                <label for="RepCon"></label>
+                <input class="mb-8 mt-6 w-52 outline-none border-b-2 dark:bg-negro dark:text-white" type="password" name="RepCon" placeholder="Repetir contraseña">
+            </form>
+            <span class="mt-8 text-gris cursor-pointer hover:text-green hover:scale-150'">¿Olvidaste tu contraseña?</span>
+            <br>
+            <button class="mt-18 items-center text-2xl font-awesome mt-4 rounded-3xl h-10 w-96 bg-green text-white duration-300 hover:scale-110">Continuar</button>
+            <br>
+            <a href="Register.html"><button class="mt-6 border-green border-2 items-center text-2xl font-awesome mt-4 rounded-3xl h-10 w-96 bg-white text-green dark:bg-negro duration-300 hover:scale-110 hover:bg-green hover:text-white">Registrame</button></a>
+        </article>
+    </section>
+    <script type="module" src="./formulario.js"></script>
+</body>
+</html>

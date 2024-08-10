@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/estilos.css">
+    <link rel="stylesheet" href="../Css/mode.css">
+    <link rel="stylesheet" href="../Css/svg.css">
+    <title>Document</title>
+</head>
+<body class="h-screen w-full dark:bg-negro grid grid-cols-1 grid-rows-[auto_1fr]">
+    <header class="h-auto col-span-3" id="header">
+    </header>
+    <main class="w-full grid grid-cols-[1fr_auto_1fr]">
+        <article class="flex flex-col px-4">
+            <div class="flex w-full justify-between">
+                <input class="dark:text-white dark:border-none dark:bg-negrito pl-2 rounded-xl outline-none border-2 border-gris h-6 w-48 mt-2" type="text">
+                <span class="flex justify-center items-center">
+                    <p class="text-grisLetra dark:text-white">0$</p>
+                    <img  class="h-12 w-12" src="../Imagenens/Imagenes-funcionales/CARRITO.svg" alt="">
+                </span>
+            </div>
+            <div class="flex justify-around flex-wrap">
+                <div class="producto rounded-lg mt-8 h-56 w-48 border-gris border-2" id="producto"></div>
+                <div class="producto rounded-lg mt-8 h-56 w-48 border-gris border-2" id="producto"></div>
+                <div class="producto rounded-lg mt-8 h-56 w-48 border-gris border-2" id="producto"></div>
+                <div class="producto rounded-lg mt-8 h-56 w-48 border-gris border-2" id="producto"></div>
+            </div>
+        </article>
+        <section class="flex justify-center items-center dark:text-white">
+            <div class="flex flex-col items-center border-2 border-gris rounded-xl py-4 px-8">
+                <h2 class="text-grisLetra dark:text-white">BENEFICIO</h2>
+                <span class="border-2 border-gris rounded-md px-2 text-red-900">-45$</span>
+                <div class="mt-4 border-2 border-gris p-2 rounded-xl flex items-center flex-col justify-center">
+                    <h2 class="text-grisLetra dark:text-white">QUIERO</h2>
+                    <div class="m-2 producto rounded-lg h-32 w-36 border-gris border-2" id="producto"></div>
+                </div>
+                <div class="mt-4 border-2 border-gris p-2 rounded-xl flex items-center flex-col justify-center">
+                    <h2 class="text-grisLetra dark:text-white">OFRESCO</h2>
+                    <div class="m-2 producto rounded-lg h-32 w-36 border-gris border-2" id="producto"></div>
+                </div>
+                <span class="mt-2 w-36 flex rounded-lg border-2 border-gris">
+                    <p class="pl-2 w-24 text-grisLetra border-r-2 border-gris dark:text-white">0$</p>
+                    <p class="w-12 text-center text-grisLetra dark:text-white">USD</p>
+                </span>
+            </div>    
+        </section>
+        <article class="flex flex-col px-4">
+            <div class="flex w-full justify-between">
+                <input class="dark:text-white dark:border-none dark:bg-negrito pl-2 rounded-xl outline-none border-2 border-gris h-6 w-48 mt-2" type="text">
+                <span class="flex justify-center items-center">
+                    <p class="text-grisLetra dark:text-white">0$</p>
+                    <img  class="h-12 w-12" src="../Imagenens/Imagenes-funcionales/CARRITO.svg" alt="">
+                </span>
+            </div>
+            <div class="flex justify-around flex-wrap">
+                <div class="producto rounded-lg mt-8 h-56 w-48 border-gris border-2" id="producto"></div>
+                <div class="producto rounded-lg mt-8 h-56 w-48 border-gris border-2" id="producto"></div>
+                <div class="producto rounded-lg mt-8 h-56 w-48 border-gris border-2" id="producto"></div>
+                <div class="producto rounded-lg mt-8 h-56 w-48 border-gris border-2" id="producto"></div>
+            </div>
+        </article>      
+    </main>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

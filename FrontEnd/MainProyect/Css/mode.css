@@ -1,0 +1,30 @@
+#button{
+    height: 40px;
+    width: 100px;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  
+  #sun{
+    color: #ffe75d;
+    font-size: 30px;
+    position: absolute;
+    z-index: 100;
+    left: 5px;
+    transition: all .7s ease-in-out;
+  }
+  
+  #mooon{
+    background-color: none;
+    opacity: 0;
+    font-size: 30px;
+    position: absolute;
+    z-index: 50;
+    color: white;
+    left: 5px;
+    transition: all .7s ease-in-out;
+
+  }
