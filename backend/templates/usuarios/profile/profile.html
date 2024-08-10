@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center py-12 sm:px-6 lg:px-8">
+    <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Sidebar -->
+        <aside class="bg-white shadow-lg rounded-lg p-6 md:h-screen">
+            <div class="text-center">
+                <img class="w-32 h-32 mx-auto rounded-full shadow-lg border-4 border-indigo-500" src="http://lilithaengineering.co.za/wp-content/uploads/2017/08/person-placeholder.jpg" alt="{{ profile.user.username }}">
+                <h2 class="mt-4 text-xl font-semibold text-gray-700">{{ profile.user.username }}</h2>
+            </div>
+            <nav class="mt-6 space-y-2">
+               
+                <a href="#" class="block bg-gray-200 text-gray-700 font-semibold text-lg p-3 rounded-md hover:bg-gray-300 transition">Settings</a>
+                <a href="{% url 'salir' %}" class="block bg-gray-200 text-gray-700 font-semibold text-lg p-3 rounded-md hover:bg-gray-300 transition">Log out</a>
+            </nav>
+
+            <!-- Rate this Profile -->
+            <div class="mt-8">
+                <h3 class="text-lg font-semibold text-gray-700">Rate this Profile</h3>
+                <div class="mt-2 flex space-x-2">
+                    {% for i in rating_range %}
+                        <a href="{% url 'rate-profile' profile.slug i %}" class="text-yellow-500 hover:text-yellow-600 text-2xl">
+                            <i class="fa fa-star"></i>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-8">
+                <h3 class="text-lg font-semibold text-gray-700">Comments</h3>
+                <div class="mt-4 space-y-4 h-64 overflow-y-auto">
+                    {% for comment in profile.comments.all %}
+                        <div class="bg-gray-100 p-4 rounded-md shadow-md">
+                            <p class="font-semibold text-gray-700">{{ comment.user.username }}</p>
+                            <p class="text-gray-600">{{ comment.content }}</p>
+                            <p class="text-xs text-gray-500">{{ comment.created_at }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Add Comment -->
+                <div class="mt-4">
+                    
+                    <form method="post" action="{% url 'comment-profile' profile.slug %}" class="mt-2">
+                        {% csrf_token %}
+                        <textarea name="content" rows="1" class="w-full border-gray-300 rounded-md shadow-sm p-2" placeholder="Write your comment..."></textarea>
+                        <button type="submit" class="mt-2 bg-indigo-500 text-white py-2 px-4 rounded-md shadow-lg hover:bg-indigo-600 transition">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="md:col-span-2 bg-white shadow-lg rounded-lg p-6">
+            <div class="overflow-hidden rounded-lg shadow-lg">
+                <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1572817519612-d8fadd929b00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="A Pretty Cool photo from the mountains">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-gray-700">A Pretty Cool photo from the mountains</h2>
+                    <p class="mt-2 text-gray-600">Image credit to @danielmirlea on Unsplash.</p>
+                    <div class="mt-4 flex justify-between text-gray-700">
+                        <button class="hover:text-indigo-500 transition">Like</button>
+                        <button class="hover:text-indigo-500 transition">Share</button>
+                        <button class="hover:text-indigo-500 transition">Comment</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+{% endblock content %}

@@ -17,6 +17,7 @@ class RegisterForm(UserCreationForm):
             user.save()
             profile = Profile(user=user)
             profile.age = self.cleaned_data['edad']
+            profile.slug = profile.user
             profile.save()
         return user
 
