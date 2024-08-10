@@ -18,6 +18,7 @@ class Profile(models.Model):
     intereses = models.ManyToManyField('Intereses', blank=True)
     slug = models.SlugField(unique=True, blank=True, null=True)
     average_rating = models.DecimalField(max_digits=3, decimal_places=2, default=0.0)
+    
     def update_average_rating(self):
         ratings = self.ratings.all()
         self.average_rating = ratings.aggregate(models.Avg('value'))['value__avg'] or 0.0
