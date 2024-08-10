@@ -24,18 +24,29 @@
                
             </div>
             <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
-                <div class=" inline-flex rounded-full shadow">
-                    <a href="{% url 'login' %}"
-                        class=" inline-flex items-center px-4 py-2 text-base text-gray-900 bg-white border border-transparent rounded-full cursor-pointer font-base hover:bg-gray-50 ">
-                        entrar
-                </a>
-                </div>
-                <div class=" inline-flex rounded-full shadow">
-                    <a  href="{% url 'register' %}"
-                        class=" inline-flex items-center px-4 py-2 text-base text-gray-900 bg-red-200 border border-transparent rounded-full cursor-pointer font-base hover:bg-gray-50 ">
-                        crear
-                </a>
-                </div>
+                
+                {% if user.is_authenticated %}
+                    <div class=" inline-flex rounded-full shadow">
+                        <a href="{% url 'salir' %}"
+                            class=" inline-flex items-center px-4 py-2 text-base text-gray-900 bg-white border border-transparent rounded-full cursor-pointer font-base hover:bg-gray-50 ">
+                            salir
+                    </a>
+                    </div>
+                    {% else %}
+                    <div class=" inline-flex rounded-full shadow">
+                        <a href="{% url 'login' %}"
+                            class=" inline-flex items-center px-4 py-2 text-base text-gray-900 bg-white border border-transparent rounded-full cursor-pointer font-base hover:bg-gray-50 ">
+                            entrar
+                    </a>
+                    </div>
+                    <div class=" inline-flex rounded-full shadow">
+                        <a  href="{% url 'register' %}"
+                            class=" inline-flex items-center px-4 py-2 text-base text-gray-900 bg-red-200 border border-transparent rounded-full cursor-pointer font-base hover:bg-gray-50 ">
+                            crear
+                    </a>
+                    </div>
+                {% endif %}
+                    
             </div>
         </nav>
     </div>
